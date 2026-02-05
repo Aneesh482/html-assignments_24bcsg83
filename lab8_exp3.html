@@ -1,40 +1,40 @@
-
-
 <html>
 <head>
-<title>abc</title>
+<title>Indian Flag</title>
 <style>
-#grad1
-{
-height: 200px;
-background: ORANGE;
-background: linear-gradient(orange);
-}
+body{margin:0}
 
-#grad2
-{
-height: 200px;
-background: WHITE;
-background: linear-gradient(WHITE);
+.strip{height:200px}
+.orange{background:orange}
+.white{
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
-#grad3
-{
-height: 200px;
-background: GREEN;
-background: linear-gradient(GREEN; }
-#img{
-height:50px
-widht:50px
-align:"center"
+.green{background:green}
+
+.chakra{
+    width:120px;
+    height:120px;
+    border:4px solid navy;
+    border-radius:50%;
+    background:
+      repeating-conic-gradient(
+        navy 0deg 2deg,
+        transparent 2deg 15deg
+      );
 }
 </style>
 </head>
-<body>
-<div id="grad1"></div>
-<div id="grad2">
-<img src="chakra.png" id=img><font align="center">
-</div>
-<div id="grad3"></div>
-</body>
 
-</html> 
+<body>
+<div class="strip orange"></div>
+
+<div class="strip white">
+    <div class="chakra"></div>
+</div>
+
+<div class="strip green"></div>
+</body>
+</html>
