@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Ecommerce Page</title>
+        <style>
+            body{
+                background-color: ghostwhite;
+            }
+            .div{
+                display:flex;
+                justify-content: center;
+                text-align: center;
+                color: gray;
+                margin-bottom: 10px;
+                padding: 10px;
+                background-color:ghostwhite;
+                font-size: 30px;
+                width: 1200px;
+                font-weight: bold;
+            }
+            .div1{
+                display: flex;
+                width: 5000px;
+                height: 400px;
+                background-color:ghostwhite;
+                justify-content: flex-start;
+                margin: 20px;
+                gap: 20px;
+
+            }
+            .image{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+
+                width: 250px;
+                height: 250px;
+                justify-content: center;
+                
+            }
+            .card{
+                width: 300px;
+                height: 400px;
+                border: 2px solid white;
+                box-shadow: 1px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+
+            }
+            h1{
+                color: rgb(66, 65, 68);
+                font-size: 20px;
+            }
+            button{
+                color:black;
+                background-color: yellow;
+                border-radius:3px;
+                border-color: antiquewhite;
+                width: 30%;
+                height: 30px;
+                font-family: sans-serif;
+            }
+            .card:hover{
+                transform: translateY(-10px) scale(1.03);
+                box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div">
+            Featured Products
+        </div>
+        <div class="div1">
+            <div class="card">
+                <img src="Maroon-Sports-T-Shirt.jpg" class="image">
+                <h1>Maroon Sports T-shirt</h1>
+                <p style="color: black; font-size: 18px;">Price: 700</p>
+                <button type="button">Add to cart</button>
+            </div>
+            <div class="card">
+                <img src="linen.png" class="image">
+                <h1>Men Green Linen Shirt</h1>
+                <p style="color: black; font-size: 18px;">Price: 1200</p>
+                <button type="button">Add to cart</button>
+            </div>
+            <div class="card">
+                <img src="pant.png" class="image">
+                <h1>PUMA Mens Woven Pant-Black</h1>
+                <p style="color: black; font-size: 18px;">Price: 1400</p>
+                <button type="button">Add to cart</button>
+            </div>
+             <div class="card">
+                <img src="Maroon-Sports-T-Shirt.jpg" class="image">
+                <h1>Maroon Sports T-shirt</h1>
+                <p style="color: black; font-size: 18px;">Price: 700</p>
+                <button type="button">Add to cart</button>
+            </div>
+        </div>
+    </body>
+</html>
