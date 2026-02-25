@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>JavaScript Problems</title>
+    </head>
+    <body>
+        <script>
+            document.write("Q1.Write a program using if-else to assign grades based on marks: >=90 ?Grade A; >=75 Grade B; >=50 Grade C; <50 ? Fail <br>")
+            var marks = 80
+            if (marks>=90){
+                document.write("Grade A");
+            }
+            else if(marks>=75){
+                document.write("Grade B");
+            }
+            else if(marks>=50){
+                document.write("Grade c");
+            }
+            else{
+                document.write("Fail!!");
+            }
+            document.write("<br>")
+            document.write("<hr>");
+            document.write("Q2.Write a program using a for loop to calculate and print the factorial of a number.<br> ")
+            var n= 5
+            var fact=1
+            for(i=0;i<5;i++){
+                fact=fact*n;
+                n--;
+            }
+            document.write("Factorial :"+fact);
+            
+
+
+            document.write("<br>")
+            document.write("<hr>");
+            document.write("Q3. Write a program using a while loop to reverse the digits of a number and check if the number is a palindrome or not<br>")
+            var num=235
+            var temp=num
+            var rem=0
+            var rev=0
+            while(num!=0){
+                rem=num%10;
+                rev=rev*10+rem;
+                num=Math.floor(num/10);
+            }
+            document.write("Reversed:"+rev);
+            if(rev==temp){
+                document.write("<br>Palindrome")
+            }
+            else{
+                document.write("<br>Not Palindrome")
+
+            }
+
+
+
+            document.write("<br>");
+            document.write("<hr>");
+            document.write("Q4.Write a program to calculate and print the sum, average, largest, and smallest of elements of an array <br>");
+            var arr= new Array(20,30,1,10,2,3,5)
+            var sum=0
+            var max=arr[0] 
+            var min=arr[0]
+            for(i=0;i<7;i++){
+                sum+=arr[i];
+            }
+            for(i=0;i<7;i++){
+                if(arr[i]>max){
+                    max=arr[i]
+                }
+            }
+            for(i=0;i<7;i++){
+                if(arr[i]<min){
+                    min=arr[i]
+                }
+            }
+            document.write("Sum of elements: "+sum+"<br>")
+            document.write("avg of elements: "+Math.round(sum/7)+"<br>")
+            document.write("Largest Element: "+max+"<br>")
+            document.write("Largest Element: "+min+"<br>")
+
+
+
+            document.write("<br>");
+            document.write("<hr>");
+            document.write("Q5.Write a program to find the second largest element of an array without sorting it <br>")
+            document.write(arr)
+            if (arr.length < 2) {
+                document.write("Array should have at least two elements");
+            }
+            let largest = Number.MIN_SAFE_INTEGER;
+            let secondLargest = Number.MIN_SAFE_INTEGER;
+
+            for (const num of arr) {
+                if (num > largest) {
+                    secondLargest = largest;
+                    largest = num;
+                }
+                else if (num > secondLargest && num !== largest) {
+                    secondLargest = num;
+                }
+            }
+            if (secondLargest === Number.MIN_SAFE_INTEGER) {
+                document.write("No second largest found");
+            }
+            document.write("<br>2nd largest: "+secondLargest);
+            
+            document.write("<br>");
+            document.write("<hr>");
+            document.write("Q6.Write a program to remove duplicate elements from an array and print the new array.<br>")
+            var arr1= new Array();
+            var arr_new= new Array(20,30,20,30,1,10,2,3,5)
+            document.write(arr_new+"<br>")
+            arr1=[...new Set(arr_new)]
+            document.write(arr1)
+
+
+
+            document.write("<br>");
+            document.write("<hr>");
+            document.write("Q7.Write a program to count how many times each element occurs in an array.<br>")
+            var arr = ["apple", "orange", "apple", "banana", "orange", "apple"];
+            var counts = {};
+            document.write(arr)
+            for (var i = 0; i < arr.length; i++) {
+                var element = arr[i];
+
+                counts[element] = counts[element] ? counts[element] + 1 : 1;
+            }       
+            document.write("<h3>Element Occurrences:</h3>");
+            for (var key in counts) {
+                document.write(key + ": " + counts[key] + " times<br>");
+            }
+            document.write("<br>");
+            document.write("<hr>");
+            document.write("Q8.Write a function isPrime(num) that returns true if the number is prime,otherwise false.<br>")
+            function isPrime(num1){
+                var c
+                for(i=2;i<num1;i++){
+                    if(num1%i===0){
+                        return false
+                    }
+                }
+                return true
+            }
+            document.write(isPrime(35))
+        </script>
+    </body>
+</html>
