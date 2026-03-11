@@ -144,6 +144,78 @@
                 return true
             }
             document.write(isPrime(35))
+
+
+            document.write("<br>");
+            document.write("<hr>");
+            document.write("Q9.Write a function to check whether a number is armstrong or not .<br>")
+            var arm= 153
+            var org=arm
+            var check=arm
+            var res=0
+            var c=0
+            while(arm!=0){
+                arm=Math.floor(arm/10)
+                c+=1
+            }
+            document.write("Original number: "+org+"<br>")
+            for(var i=0;i<c;i++){
+                
+                var rem=org%10;
+                res+= rem**c
+                org=Math.floor(org/10)
+            }
+            if (check==res){
+                document.write("It is a armstrong number<br>");
+            }
+            else {
+                document.write("it is not a armstrong number<br>")
+            }
+
+            document.write("<br>");
+            document.write("<hr>");
+            document.write("Q10.Write a function that takes an array of numbers and return two new arrays: one containing even numbers and one containing odd numbers.<br>")
+
+            function separateEvenOdd(arr){
+                var even = []
+                var odd = []
+
+                for(var i = 0; i < arr.length; i++){
+                    if(arr[i] % 2 == 0){
+                        even.push(arr[i])
+                    }
+                    else{
+                        odd.push(arr[i])
+                    }
+                }
+
+                return [even, odd]
+            }
+
+            var nums = [1,2,3,4,5,6,7,8]
+            var result = separateEvenOdd(nums)
+
+            document.write("Even numbers:", result[0]+"<br>")
+            document.write("Odd numbers:", result[1]+"<br>")
+
+            document.write("<br>");
+            document.write("<hr>");
+            document.write("Q11.Write a function reverseArray(arr) that reverse the elements of an array without using built in reverse() method.<br>")
+            function reverseArray(arr){
+                var reversed = []
+                for(var i = arr.length - 1; i >= 0; i--){
+                    reversed.push(arr[i])
+                }
+                return reversed
+            }
+            var a = [1,2,3,4,5]
+            document.write("Original array:"+a+"<br>")
+            document.write("Reversed Array:")
+            var result = reverseArray(a)
+            document.write(result)
+
+        
+
         </script>
     </body>
 </html>
