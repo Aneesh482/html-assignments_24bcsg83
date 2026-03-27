@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        select, input {
+            width: 45%;
+            padding: 10px;
+            margin: 10px 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        select:focus, input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,123,255,0.5);
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+    <script>
+        const conversionRates = {
+            USD: { EUR: 0.93, GBP: 0.82, INR: 82.74, AUD: 1.47 },
+            EUR: { USD: 1.08, GBP: 0.88, INR: 89.06, AUD: 1.58 },
+            GBP: { USD: 1.22, EUR: 1.14, INR: 101.5, AUD: 1.80 },
+            INR: { USD: 0.012, EUR: 0.011, GBP: 0.0098, AUD: 0.018 },
+            AUD: { USD: 0.68, EUR: 0.63, GBP: 0.55, INR: 55.87 }
+        };
+
+        function convertCurrency() {
+            const fromCurrency = document.getElementById("fromCurrency").value;
+            const toCurrency = document.getElementById("toCurrency").value;
+            const amount = document.getElementById("amount").value.trim();
+
+            if (!amount || !fromCurrency || !toCurrency) {
+                alert("⚠️ All fields are mandatory.");
+                return;
+            }
+
+            if (fromCurrency === toCurrency) {
+                alert("⚠️ 'From' and 'To' currencies cannot be the same.");
+                return;
+            }
+
+            const rate = conversionRates[fromCurrency][toCurrency];
+            const convertedAmount = (parseFloat(amount) * rate).toFixed(2);
+
+            document.getElementById("result").textContent =
+                `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>💱 Currency Converter</h2>
+        <div>
+            <select id="fromCurrency">
+                <option value="">From</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="AUD">AUD</option>
+            </select>
+            <select id="toCurrency">
+                <option value="">To</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="AUD">AUD</option>
+            </select>
+        </div>
+        <input type="text" id="amount" placeholder="Enter amount">
+        <button onclick="convertCurrency()">Convert</button>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>DOM Assignment 6</title>
+        <script>
+            function change(){
+                document.getElementsByTagName("h2")[0].innerHTML="Welcome to DOM Manipulation"
+            }
+            function hide(){
+                var ele=document.getElementById("hide")
+                if (ele.style.display==="none"){
+                    ele.style.display="block"
+                }
+                else{
+                    ele.style.display="none"
+                }
+            }
+            function color(col){
+                var div=document.getElementById("d1")
+                div.style.backgroundColor=col
+            }
+            function counter(c){
+                var input=document.getElementById("counter")
+                var val=parseInt(input.value)
+                if (c=="increment"){
+                    val++
+                }
+                else{
+                    val--
+                }
+                input.value=val
+            }
+            function checkPrime(){
+                var num=parseInt(document.getElementById("number").value);
+                if (isNaN(num)){
+                    alert("Please enter a valid number")
+                    return
+                }
+                if (num < 2) {
+                    alert(num + " is NOT a prime number.");
+                    return;
+                }
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        alert(num + " is NOT a prime number.");
+                        return;
+                    }
+                }
+                alert(num + " is a PRIME number!");
+        }
+        </script>
+        <style>
+            p{
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .d1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+                width: 300px;
+                align-self: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Hello World</h2>
+        <button onclick="change()">Click me </button>
+        <p id="hide">JavaScript, a high-level programming language, was created by Brendan Eich in 1995 while he was working at Netscape Communications. Initially named Mocha, it was later renamed to LiveScript and finally to JavaScript.</p>
+        <button onclick="hide()">Show/Hide</button>
+        <div class="d1" id="d1"> Color Change </div>
+        <div>
+            <button id="bt2" onclick="color('red')">Red</button>
+            <button id="bt2" onclick="color('green')">Green</button>
+            <button id="bt2" onclick="color('blue')">Blue</button>
+        </div>
+        <input type="text" id="counter" value="0">
+        <br><br>
+        <button onclick="counter('increment')">Increment</button>
+        <button onclick="counter('decrement')">Decrement</button>
+        <form onsubmit="event.preventDefault(); checkPrime();">
+            <input type="text" id="number" placeholder="Enter a number">
+            <button type="submit">Check</button>
+        </form>
+
+    </body>
+</html>
